@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="CodeGarden">
 <meta property="og:description" content="近期正在学习 Java ，参考书籍是：《Java 核心技术》。在此做下笔记，以便后期复习查看。 第 2 章：Java 程序设计环境(Win 10) 安装  JDK (Java SE Development Kit)  进入Environment Variables ，在 System variables 中新建变量，变量名为Java_Home ，变量值为C:\Java\jdk1.8.0_151(安">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-29T06:46:23.902Z">
+<meta property="og:updated_time" content="2018-08-29T10:07:23.332Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java 学习笔记">
 <meta name="twitter:description" content="近期正在学习 Java ，参考书籍是：《Java 核心技术》。在此做下笔记，以便后期复习查看。 第 2 章：Java 程序设计环境(Win 10) 安装  JDK (Java SE Development Kit)  进入Environment Variables ，在 System variables 中新建变量，变量名为Java_Home ，变量值为C:\Java\jdk1.8.0_151(安">
@@ -333,13 +333,28 @@
 </li>
 <li><p>main 方法必须声明为 public 。</p>
 </li>
-<li>注释：有三种注释：<ol>
+<li><p>注释：有三种注释：</p>
+<ol>
 <li>注释单行 <code>//</code></li>
-<li>注释多行 <code>/* ~ */</code> </li>
+<li>注释多行 <code>/* ~ */</code></li>
 <li>注释多行，可生成文档 <code>/** ~ */</code> </li>
 </ol>
 </li>
-<li>数据类型</li>
+<li><p><strong>数据类型</strong>：一共有8种基本类型 ( primitive type ) ，其中有4种整型 ( int , short , long , byte) ，2种浮点类型 ( float ,double) ，1种用于表示Unicode 编码的字符单元的字符类型char，和一种用于表示真值的boolean 类型。</p>
+</li>
+<li><p>String 类的 substring 方法可以从一个较大的字符串中提取出一个字串。</p>
+</li>
+<li><p>空串 “” 是长度为0的字符串。可以使用<code>if (str.length == 0)</code>  或  <code>if( str.equals(&quot;&quot;))</code>来检查一个字符串是否为空。空串是一个Java 对象，有自己的串长度 (0) 和内容 (空) 。</p>
+</li>
+<li><p>Null 串表明目前没有任何对象与该变量关联。通过<code>if( str== null)</code>来检查一个字符串是否为null。要检查一个字符串既不是null 也不为空串，需要使用<code>if(str != null &amp;&amp; str.length !=0)</code> 首先要检查 str 不为 null，如果在一个 null 值上调用方法，会出现错误。</p>
+</li>
+<li><p>构建字符串：</p>
+<ul>
+<li>首先构建一个空的字符串构建器：<code>StringBuilder builder = new StringBuilder();</code></li>
+<li>然后调用append 添加内容：<code>builder.append(str or  char);</code></li>
+<li>最后调用toString 方法构建字符串：<code>String  completedString=builder.toString();</code></li>
+</ul>
+</li>
 </ol>
 
       
