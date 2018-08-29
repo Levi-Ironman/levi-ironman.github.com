@@ -28,17 +28,6 @@ user-select:none;
         margin: auto;
         border: 4px solid black;
     }
-    .piano_2{
-        position: absolute;
-        width: 90%;
-        height: 20em;
-        background-color: white;
-        top: 0;
-        left: 5%;
-        bottom: 0;
-        margin: auto;
-        border: 4px solid black;
-    }
     .piano_board{
         position: relative;
         float:left;
