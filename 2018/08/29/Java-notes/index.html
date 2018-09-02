@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Gardener&#39;s Bugs">
 <meta property="og:description" content="近期正在学习 Java ，参考书籍是：《Java 核心技术》。在此做下笔记，以便后期复习查看。 第 2 章：Java 程序设计环境(Win 10) 安装  JDK (Java SE Development Kit)  进入Environment Variables ，在 System variables 中新建变量，变量名为Java_Home ，变量值为C:\Java\jdk1.8.0_151(安">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-31T10:07:46.219Z">
+<meta property="og:updated_time" content="2018-09-02T02:34:26.944Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java 学习笔记">
 <meta name="twitter:description" content="近期正在学习 Java ，参考书籍是：《Java 核心技术》。在此做下笔记，以便后期复习查看。 第 2 章：Java 程序设计环境(Win 10) 安装  JDK (Java SE Development Kit)  进入Environment Variables ，在 System variables 中新建变量，变量名为Java_Home ，变量值为C:\Java\jdk1.8.0_151(安">
@@ -354,14 +354,14 @@
 
       
         <p><em>近期正在学习 Java ，参考书籍是：《Java 核心技术》。在此做下笔记，以便后期复习查看。</em></p>
-<h5 id="第-2-章：Java-程序设计环境-Win-10"><a href="#第-2-章：Java-程序设计环境-Win-10" class="headerlink" title="第 2 章：Java 程序设计环境(Win 10)"></a>第 2 章：Java 程序设计环境(Win 10)</h5><ol>
+<h4 id="第-2-章：Java-程序设计环境-Win-10"><a href="#第-2-章：Java-程序设计环境-Win-10" class="headerlink" title="第 2 章：Java 程序设计环境(Win 10)"></a>第 2 章：Java 程序设计环境(Win 10)</h4><ol>
 <li><p>安装  <a href="https://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank" rel="noopener">JDK (Java SE Development Kit)</a></p>
 </li>
 <li><p>进入Environment Variables ，在 System variables 中新建变量，变量名为<code>Java_Home</code> ，变量值为<code>C:\Java\jdk1.8.0_151</code>(安装路径) 。</p>
 </li>
 <li>选择 System variables 的 Path 变量，添加 <code>%Java_Home%\bin</code> 和 <code>%Java_Home%\jre\bin</code> 两条值。</li>
 </ol>
-<h5 id="第-3-章：Java-的基本程序设计结构"><a href="#第-3-章：Java-的基本程序设计结构" class="headerlink" title="第 3 章：Java 的基本程序设计结构"></a>第 3 章：Java 的基本程序设计结构</h5><ol>
+<h4 id="第-3-章：Java-的基本程序设计结构"><a href="#第-3-章：Java-的基本程序设计结构" class="headerlink" title="第 3 章：Java 的基本程序设计结构"></a>第 3 章：Java 的基本程序设计结构</h4><ol>
 <li><p>最简单的 Java 应用程序 ：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span></span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line"></span><br><span class="line"> 	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line"></span><br><span class="line">		System.out.println(<span class="string">"Hello World !"</span>);</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
@@ -397,8 +397,30 @@
 <p>f 表示浮点数，s 表示字符串，d 表示十进制整数。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String message=String.format(<span class="string">"Hello , %s. Next year,you'll be %d."</span>,name,age);--创建一个格式化的字符串而不打印输出</span><br></pre></td></tr></table></figure>
 </li>
+<li><p><strong>大数值</strong>: BigInteger 和 BigDecimal。</p>
+<ul>
+<li><p>将普通数值转换为大数值：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">BigInteger a=BigInteger.valueOf(<span class="number">100</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>算术运算：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">BigInteger c=a.add(b);<span class="comment">//c=a+b</span></span><br><span class="line">BigInteger d=c.multiply(b.add(BigInteger.valueOf(<span class="number">2</span>)));<span class="comment">//d=c*(b+2)</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><strong>声明数组</strong>：<code>int [] a;</code></p>
+</li>
+<li><p><strong>for each 循环</strong>:<code>for(int i : a)  System.out.println(i);</code></p>
+</li>
+<li><p><strong>打印数组中所有值</strong>:<code>System.out.println(Arrays.toString(a));</code></p>
+</li>
+<li><p><strong>数组拷贝</strong>: 在Java 中，允许将一个数组变量拷贝给另一个数组变量。这时，两个变量将引用同一个数组。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> [] luckyNumbers=smallPrimes;</span><br><span class="line">luckyNumbers[<span class="number">5</span>]=<span class="number">12</span>;<span class="comment">//smallPrimes[5]=12</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> [] copiedLuckyNumbers=Arrays.copyOf(luckyNumbers,luckyNumbers.length);<span class="comment">//将一个数组中的所有值拷贝到一个新数组中</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>数组排序</strong>:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] a=<span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">100</span>];</span><br><span class="line">...</span><br><span class="line">Arrays.sort(a);</span><br></pre></td></tr></table></figure>
+</li>
 </ol>
-
+<h4 id="第-4-章-对象与类"><a href="#第-4-章-对象与类" class="headerlink" title="第 4 章  对象与类"></a>第 4 章  对象与类</h4>
       
     </div>
     
@@ -560,7 +582,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#第-2-章：Java-程序设计环境-Win-10"><span class="nav-number">1.</span> <span class="nav-text">第 2 章：Java 程序设计环境(Win 10)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#第-3-章：Java-的基本程序设计结构"><span class="nav-number">2.</span> <span class="nav-text">第 3 章：Java 的基本程序设计结构</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#第-2-章：Java-程序设计环境-Win-10"><span class="nav-number">1.</span> <span class="nav-text">第 2 章：Java 程序设计环境(Win 10)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第-3-章：Java-的基本程序设计结构"><span class="nav-number">2.</span> <span class="nav-text">第 3 章：Java 的基本程序设计结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第-4-章-对象与类"><span class="nav-number">3.</span> <span class="nav-text">第 4 章  对象与类</span></a></li></ol></div>
             
 
           </div>
