@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Gardener&#39;s Bugs">
 <meta property="og:description" content="近期正在学习 Java ，参考书籍是：《Java 核心技术》。在此做下笔记，以便后期复习查看。 第 2 章：Java 程序设计环境(Win 10) 安装  JDK (Java SE Development Kit)  进入Environment Variables ，在 System variables 中新建变量，变量名为Java_Home ，变量值为C:\Java\jdk1.8.0_151(安">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-06T02:41:13.660Z">
+<meta property="og:updated_time" content="2018-09-11T12:30:23.324Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java 学习笔记">
 <meta name="twitter:description" content="近期正在学习 Java ，参考书籍是：《Java 核心技术》。在此做下笔记，以便后期复习查看。 第 2 章：Java 程序设计环境(Win 10) 安装  JDK (Java SE Development Kit)  进入Environment Variables ，在 System variables 中新建变量，变量名为Java_Home ，变量值为C:\Java\jdk1.8.0_151(安">
@@ -455,15 +455,43 @@
 <ol start="2">
 <li>关键字this表示隐式参数。</li>
 <li>方法得到的是对象引用的拷贝，对象引用及其他的拷贝同时引用同一个对象。</li>
+<li>final 修饰符大都应用于基本( primitive ) 类型域，或不可变( immutable ) 类的域（如果类中的每个方法都不会改变其对象，这种类就是不可变的类。）</li>
 <li><strong>方法参数：</strong><ul>
 <li>一个方法不能修改一个基本数据类型的参数（即数值型或布尔型）。</li>
 <li>一个方法可以改变一个对象参数的状态。</li>
 <li>一个方法不能让对象参数引用一个新的对象。 </li>
 </ul>
 </li>
-<li></li>
+<li><strong>类设计技巧</strong>:<ul>
+<li>一定要保证数据私有</li>
+<li>一定要对数据初始化</li>
+<li>不要在类中使用过多的基本类型</li>
+<li>不是所有的域都需要独立的域访问器和域更改器</li>
+<li>将职责过多的类进行分解</li>
+<li>类名和方法名要能够体现他们-[的职责</li>
+<li>优先使用不可变的类</li>
+</ul>
+</li>
 </ol>
-
+<h4 id="第-5-章-继承"><a href="#第-5-章-继承" class="headerlink" title="第 5 章  继承"></a>第 5 章  继承</h4><ol>
+<li><p>在设计类的时候，应该将通用的方法放在超类中，而将具有特殊用途的方法放在子类中。</p>
+</li>
+<li><p>关键字this 有两个用途：一是引用隐式参数；二是调用该类其他的构造器。</p>
+</li>
+<li><p>关键字super 有两个用途：一是调用超类的方法；二是调用超类的构造器。</p>
+</li>
+<li><p>protected 对本包和所有子类可见。</p>
+</li>
+<li><p>Object是 Java 中所有类的超类，每个类都是由它扩展而来的。</p>
+</li>
+<li><p><strong>泛型数组列表:</strong></p>
+<p>下面这个技巧可以一举两得，既可以灵活的扩展数组，又可以方便的访问数组元素。首先，创建一个数组，并添加所有的元素。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">ArrayList&lt;X&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line"><span class="keyword">while</span>(...)&#123;</span><br><span class="line">    x=...;</span><br><span class="line">    list.add(x);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//使用toArray()方法将数组元素拷贝到一个数组中</span></span><br><span class="line">X[] a = <span class="keyword">new</span> X[list.size()];</span><br><span class="line">list.toArray(a);</span><br><span class="line"><span class="comment">//还可以在数组列表的中间插入元素</span></span><br><span class="line"><span class="keyword">int</span> n=list.size()/<span class="number">2</span>;</span><br><span class="line">list.add(n,x);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在比较两个枚举类型的值时，永远不需要调用equals，而直接使用”==”。</p>
+</li>
+</ol>
+<h4 id="第-6-章-接口，lambda-表达式与内部类"><a href="#第-6-章-接口，lambda-表达式与内部类" class="headerlink" title="第 6 章  接口，lambda 表达式与内部类"></a>第 6 章  接口，lambda 表达式与内部类</h4>
       
     </div>
     
@@ -575,7 +603,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -621,7 +649,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#第-2-章：Java-程序设计环境-Win-10"><span class="nav-number">1.</span> <span class="nav-text">第 2 章：Java 程序设计环境(Win 10)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第-3-章：Java-的基本程序设计结构"><span class="nav-number">2.</span> <span class="nav-text">第 3 章：Java 的基本程序设计结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第-4-章-对象与类"><span class="nav-number">3.</span> <span class="nav-text">第 4 章  对象与类</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#第-2-章：Java-程序设计环境-Win-10"><span class="nav-number">1.</span> <span class="nav-text">第 2 章：Java 程序设计环境(Win 10)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第-3-章：Java-的基本程序设计结构"><span class="nav-number">2.</span> <span class="nav-text">第 3 章：Java 的基本程序设计结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第-4-章-对象与类"><span class="nav-number">3.</span> <span class="nav-text">第 4 章  对象与类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第-5-章-继承"><span class="nav-number">4.</span> <span class="nav-text">第 5 章  继承</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第-6-章-接口，lambda-表达式与内部类"><span class="nav-number">5.</span> <span class="nav-text">第 6 章  接口，lambda 表达式与内部类</span></a></li></ol></div>
             
 
           </div>
