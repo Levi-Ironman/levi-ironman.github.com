@@ -10,5 +10,3 @@ Disallow: /css/
 Disallow: /fonts/
 Disallow: /vendors/
 Disallow: /fancybox/
-
-Sitemap: http://leviyang.github.io/sitemap.xml
