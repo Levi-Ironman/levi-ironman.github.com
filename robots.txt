@@ -11,4 +11,4 @@ Disallow: /fonts/
 Disallow: /vendors/
 Disallow: /fancybox/
 
-Sitemap: http://leviyang.xyz/sitemap.xml
+Sitemap: http://leviyang.github.io/sitemap.xml
